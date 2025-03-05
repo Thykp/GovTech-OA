@@ -38,6 +38,8 @@ The backend follows a MVC architecture where the backend is structured into /bac
 
 - [Node.js](https://nodejs.org/) (if running locally)
 - [Docker](https://www.docker.com/) (for containerized deployment)
+- [Postman] (to test API Endpoint)
+- [Browser] (if testing endpoints on web browser)
 - Mock Data has already been inserted into Supabase
 - Supabase .env keys (below)
 - Create a .env file in the project root with the required Supabase credentials:
