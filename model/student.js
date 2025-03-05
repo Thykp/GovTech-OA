@@ -12,7 +12,7 @@ module.exports = {
                 id, 
                 name, 
                 teacher_student(teacher_id, teacher:teacher(name)), 
-                enrollments(gpa)
+                enrollments(gpa, semester)
             `);
 
         if (error) {

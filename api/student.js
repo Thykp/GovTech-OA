@@ -44,4 +44,35 @@ router.put('/reassign', async (req, res) => {
 
 });
 
+router.get('/specific', async (req, res) => {
+
+    try {
+
+        const { from, to } = req.body;
+        
+        const AllStudentandTeacher = await student.getStudentandTeacher();
+
+        const response = AllStudentandTeacher.map(student => {
+            const filteredGPA = student.enrollments
+                .filter(e => e.semester >= from && e.semester <= to)
+                .map(e => e.gpa);
+
+            const cumulativeGPA = filteredGPA.length ? (filteredGPA.reduce((sum, g) => sum + g, 0) / filteredGPA.length).toFixed(2) : 'N/A';
+
+            return {
+                id: student.id,
+                name: student.name,
+                teacher: student.teacher_student?.[0]?.teacher?.name || 'No Teacher Assigned',
+                cumulativeGPA
+            };
+        });
+
+        res.json(response);
+
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+
+});
+
 module.exports = router;
