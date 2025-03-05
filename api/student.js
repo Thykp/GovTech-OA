@@ -28,4 +28,20 @@ router.get('/', async (req, res) => {
 
 });
 
+router.put('/reassign', async (req, res) => {
+
+    try {
+
+        const { studentId, teacherId } = req.body;
+
+        const reassign = await student.assignTeacher(studentId, teacherId);
+
+        res.json({ message: 'Student reassigned successfully' });
+
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+
+});
+
 module.exports = router;
