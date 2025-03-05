@@ -170,7 +170,7 @@ Change the "from" and "to" values respectively to get the desired cGPA in the ti
 - The API adheres to REST principles and uses JSON responses.
 
 ## Personal thoughts and reflection
-I was inspired to do something similar that I had done from my past project at SMU .Hack HEAP where I also used a Node, Express and Supabase stack for a MVC Backend. I Chose to use this architecture as it is easily scalable and very easy to read and onboard for new developers.
+I was inspired to do something similar that I had done from my past project at SMU .Hack HEAP (which you had guided me) where I also used a Node, Express and Supabase stack for a MVC Backend. I Chose to use this architecture as it is easily scalable and very easy to read and onboard for new developers.
 <br>
 The Frontend would call an API Endpoint which is routed via the /api/index.js file which then routes the api to the correct folder (in this case /api/student). Once in the /student route, it calls upon the API Endpoint and then calls the async function in the Models folder /model/student.js. 
 <br>
