@@ -48,7 +48,7 @@ router.get('/specific', async (req, res) => {
 
     try {
 
-        const { from, to } = req.body;
+        const { from, to } = req.query;
         
         const AllStudentandTeacher = await student.getStudentandTeacher();
 
